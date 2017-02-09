@@ -20,7 +20,7 @@ import XCTest
 
 // The variable is the most basic building block of most programming languages.
 // Variables store values. Here's an example of a value:
-1 // Take a look to your right ->
+// Take a look to your right -> 1
 
 // Variables have names, which is how we refer to them. Here's a variable called 'number' that's equal to the value 1:
 var number = 1
@@ -40,6 +40,7 @@ string = "Hello, GA students!"
 // TODO: Make sure to re-comment it by adding '//' before the line, or else the rest of this playground won't run!
 
 // TODO: Now, set the variable 'number' that we defined above equal to 2 on the line below
+number = 2
 
 // Variables also have 'types'. For example, number is of type Int (a whole integer). string is of type String (some text).
 // Variables have 'type annotations' that are usually optional in Swift. They look like this:
@@ -47,22 +48,30 @@ var anotherNumber: Int = 2 // This line is the same as saying 'var anotherNumber
 var anotherString: String = "String!" // This line is the same as saying 'var anotherString = "String!"
 
 // TODO: Create a new variable called 'someDouble', of type Double (a decimal number, not a whole integer), and set it equal to 2.5
+var someDouble: Double = 2.5
 
 // TODO: Create a variable called 'boolean' and set it equal to true. Remember that Booleans (type Bool) can be true or false.
+var boolean = true
 
 // TODO: Try setting your variable 'boolean' to a value of "Book". What happens? (Make sure to comment that out after you're done so the rest of the playground will run appropriately!)
+// boolean = "Book"
 
 // We can set variables to values (e.g. 2, 2.5, "some text!"), and we can also set them to equal other variables.
 
 // TODO: Create a new variable called 'someOtherDouble' and set it equal to 'someDouble'
+var someOtherDouble = someDouble
 
 // We can also recall the value of variables we've stored by referencing their names (e.g. 'someDouble', 'someOtherDouble'). We can print things by using print(), e.g. print("hello!")
+
 // TODO: Print the variable 'someOtherDouble'
+print(someOtherDouble)
 
 // You can also perform common math operations on variables, like: +, -, * and /.
 // TODO: Print someDouble + someOtherDouble
+print(someDouble + someOtherDouble)
 
 // Bonus TODO: Variable names can also be emojis in Swift. Create a variable called 🐱 equal to the value 42
+var 🐱 = 42
 
 /* Part 2:
                           .___.__  __  .__                     .__
@@ -166,7 +175,7 @@ print(multilingual)
 
 // We can perform operations like lowercasing strings:
 
-print(multilingual.lowercaseString)
+print(multilingual.lowercased())
 
 // TODO: Create a new variable, uppercaseMultilingual, that is the uppercase version of multilingual.
 
@@ -257,11 +266,11 @@ struct TestRunner {
     func runTests(testClass:AnyClass) {
         let tests = testClass as! XCTestCase.Type
         let testSuite = tests.defaultTestSuite()
-        testSuite.runTest()
+        testSuite.run()
         let run = testSuite.testRun as! XCTestSuiteRun
 
         print("\(run.totalFailureCount) failures")
     }
 }
 
-TestRunner().runTests(MyTests)
+TestRunner().runTests(testClass: MyTests())
