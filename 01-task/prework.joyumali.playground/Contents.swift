@@ -1,6 +1,8 @@
 //: Playground - noun: a place where people can play!
 
 import XCTest
+import Foundation
+
 
 /*
  Part 1:
@@ -140,7 +142,7 @@ if 1 > 0 {
 
 // TODO: Create a variable called 'age' and set it equal to a number. Then create three boolean variables called: 'canDrink', 'canVote', and 'canDrive'. Create a series of 'if', 'else if' and 'else' statements to set them appropriately. Print out the results after. Change around the number to ensure that your logic is working correctly:
 
-var age = 18
+var age = 19
 var canDrink = false
 var canVote = true
 var canDrive = true
@@ -334,5 +336,5 @@ struct TestRunner {
     }
 }
 
-TestRunner().runTests(testClass: MyTests())
+TestRunner().runTests(testClass: MyTests.self)
 
